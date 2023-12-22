@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veranco/utils/colors.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text('Sign Up'),
       ),
       body: Padding(
