@@ -15,6 +15,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final inputborder = OutlineInputBorder(
+        borderSide: Divider.createBorderSide(context),
+        borderRadius: BorderRadius.all(Radius.circular(10.0))
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
@@ -27,19 +32,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
           children: [
             TextField(
               controller: _fullNameController,
-              decoration: InputDecoration(labelText: 'Full Name'),
+              decoration: InputDecoration(labelText: 'Name', hintText: 'Enter full name',
+              fillColor: primaryColor, focusedBorder: inputborder, border: inputborder),
               keyboardType: TextInputType.text,
             ),
             SizedBox(height: 16.0),
             TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-              keyboardType: TextInputType.emailAddress,
+              controller: _fullNameController,
+              decoration: InputDecoration(labelText: 'Email', hintText: 'Enter email id',
+                  fillColor: primaryColor, focusedBorder: inputborder, border: inputborder),
+              keyboardType: TextInputType.text,
             ),
             SizedBox(height: 16.0),
             TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
+              controller: _fullNameController,
+              decoration: InputDecoration(labelText: 'Password', hintText: 'Create a password',
+                  fillColor: primaryColor, focusedBorder: inputborder, border: inputborder),
+              obscureText: true,
+            ),
+            SizedBox(height: 16.0),
+            TextField(
+              controller: _fullNameController,
+              decoration: InputDecoration(labelText: 'Confirm Password',
+                  fillColor: primaryColor, focusedBorder: inputborder, border: inputborder),
               obscureText: true,
             ),
             SizedBox(height: 16.0),
