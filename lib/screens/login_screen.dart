@@ -15,6 +15,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final inputborder = OutlineInputBorder(
+        borderSide: Divider.createBorderSide(context),
+        borderRadius: BorderRadius.all(Radius.circular(10.0))
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
@@ -28,26 +33,15 @@ class _LoginScreenState extends State<LoginScreen> {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(labelText: 'Email',
-              fillColor: primaryColor, focusedBorder: OutlineInputBorder(
-                      borderSide: Divider.createBorderSide(context),
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))
-                  ), border: OutlineInputBorder(
-                      borderSide: Divider.createBorderSide(context),
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))
-                  )),
+              fillColor: primaryColor, focusedBorder: inputborder, border: inputborder),
               keyboardType: TextInputType.emailAddress,
             ),
             SizedBox(height: 16.0),
             TextField(
               controller: _passwordController,
               decoration: InputDecoration(labelText: 'Password',
-              fillColor: secondaryColor,focusedBorder: OutlineInputBorder(
-                      borderSide: Divider.createBorderSide(context),
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))
-                  ), border: OutlineInputBorder(
-                      borderSide: Divider.createBorderSide(context),
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))
-                  )),
+              fillColor: secondaryColor,focusedBorder: inputborder,
+                  border: inputborder),
               obscureText: true,
             ),
             SizedBox(height: 16.0),
