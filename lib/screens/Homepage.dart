@@ -81,7 +81,16 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              CourseDetail(),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    CourseDetail(),
+                    CourseDetail(),
+                    CourseDetail(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
