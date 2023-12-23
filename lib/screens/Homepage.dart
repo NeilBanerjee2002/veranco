@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:veranco/utils/colors.dart';
 import 'package:veranco/utils/course_card.dart';
+import 'package:veranco/utils/course_detail_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: lightGrayColor,
         body: SafeArea(
           child: Column(
             children: <Widget>[
@@ -79,7 +80,8 @@ class _HomePageState extends State<HomePage> {
                     CourseCard(title: 'Degital Marketing',),
                   ],
                 ),
-              )
+              ),
+              CourseDetail(),
             ],
           ),
         ),
