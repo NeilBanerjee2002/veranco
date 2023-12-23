@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:veranco/utils/colors.dart';
+import 'package:veranco/utils/course_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -72,118 +73,10 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(14),
                 child: Row(
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isCardActive = !isCardActive;
-                        });
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(color: primaryColor),
-                          borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        color: isCardActive ? activecolorbox : inactivecolorbox,
-                        child: TextButton(
-                          child: Text(
-                            'All courses',
-                            style: TextStyle(
-                              color: isCardActive ? activecolortext : inactivecolortext,
-                            ),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              isCardActive ? isCardActive = false :
-                                  isCardActive = true;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isCardActive = !isCardActive;
-                        });
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                            side: BorderSide(color: primaryColor),
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        color: isCardActive ? activecolorbox : inactivecolorbox,
-                        child: TextButton(
-                          child: Text(
-                            'Design',
-                            style: TextStyle(
-                              color: isCardActive ? activecolortext : inactivecolortext,
-                            ),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              isCardActive ? isCardActive = false :
-                              isCardActive = true;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isCardActive = !isCardActive;
-                        });
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                            side: BorderSide(color: primaryColor),
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        color: isCardActive ? activecolorbox : inactivecolorbox,
-                        child: TextButton(
-                          child: Text(
-                            'Painting',
-                            style: TextStyle(
-                              color: isCardActive ? activecolortext : inactivecolortext,
-                            ),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              isCardActive ? isCardActive = false :
-                              isCardActive = true;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isCardActive = !isCardActive;
-                        });
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                            side: BorderSide(color: primaryColor),
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        color: isCardActive ? activecolorbox : inactivecolorbox,
-                        child: TextButton(
-                          child: Text(
-                            'Digital Marketing',
-                            style: TextStyle(
-                              color: isCardActive ? activecolortext : inactivecolortext,
-                            ),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              isCardActive ? isCardActive = false :
-                              isCardActive = true;
-                            });
-                          },
-                        ),
-                      ),
-                    )
+                    CourseCard(title: 'All courses',),
+                    CourseCard(title: 'Design',),
+                    CourseCard(title: 'Painting',),
+                    CourseCard(title: 'Degital Marketing',),
                   ],
                 ),
               )
