@@ -12,18 +12,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController _searchController = TextEditingController();
-  final activecolortext = Colors.white;
-  final activecolorbox = primaryColor;
-  final inactivecolorbox = Colors.white;
-  final inactivecolortext = primaryColor;
-  bool isCardActive = false;
 
   @override
   Widget build(BuildContext context) {
     final inputborder = OutlineInputBorder(
         borderSide: Divider.createBorderSide(context),
-        borderRadius: BorderRadius.all(Radius.circular(10.0))
-    );
+        borderRadius: BorderRadius.all(Radius.circular(10.0)));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -74,12 +68,31 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(14),
                 child: Row(
                   children: [
-                    CourseCard(title: 'All courses',),
-                    CourseCard(title: 'Design',),
-                    CourseCard(title: 'Painting',),
-                    CourseCard(title: 'Degital Marketing',),
+                    CourseCard(
+                      title: 'All courses',
+                    ),
+                    CourseCard(
+                      title: 'Design',
+                    ),
+                    CourseCard(
+                      title: 'Painting',
+                    ),
+                    CourseCard(
+                      title: 'Degital Marketing',
+                    ),
                   ],
                 ),
+              ),
+              Row(
+                children: [
+                  SizedBox(width: 20,),
+                  Text(
+                    'Trending Courses',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 250,),
+                  Icon(Icons.navigate_next_outlined),
+                ],
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
