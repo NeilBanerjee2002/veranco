@@ -10,9 +10,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController _searchController = TextEditingController();
+  final activecolortext = Colors.white;
+  final activecolorbox = primaryColor;
+  final inactivecolorbox = Colors.white;
+  final inactivecolortext = primaryColor;
+  bool isCardActive = false;
 
   @override
   Widget build(BuildContext context) {
+    final inputborder = OutlineInputBorder(
+        borderSide: Divider.createBorderSide(context),
+        borderRadius: BorderRadius.all(Radius.circular(10.0))
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -48,10 +58,51 @@ class _HomePageState extends State<HomePage> {
                   decoration: InputDecoration(
                     hintText: 'Search...',
                     prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(),
+                    border: inputborder,
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.filter_list),
+                      onPressed: () {
+                        print("Filter button pressed");
+                      },
+                    ),
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(14),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isCardActive = !isCardActive;
+                        });
+                      },
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(color: primaryColor),
+                          borderRadius: BorderRadius.all(Radius.circular(10.0))
+                        ),
+                        color: isCardActive ? activecolorbox : inactivecolorbox,
+                        child: TextButton(
+                          child: Text(
+                            'All courses',
+                            style: TextStyle(
+                              color: isCardActive ? activecolortext : inactivecolortext,
+                            ),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              isCardActive ? isCardActive = false :
+                                  isCardActive = true;
+                            });
+                          },
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
