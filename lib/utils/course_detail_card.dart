@@ -16,7 +16,7 @@ class _CourseDetailState extends State<CourseDetail> {
       child: Padding(
         padding: EdgeInsets.all(14),
         child: Container(
-          height: 300, width: 300,
+          height: 260, width: 300,
           decoration:  BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12.0),
