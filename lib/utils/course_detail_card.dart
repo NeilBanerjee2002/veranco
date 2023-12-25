@@ -60,7 +60,7 @@ class _CourseDetailState extends State<CourseDetail> {
                 Text('5h 33m', style: TextStyle(color: primaryColor),),
                 Text(' | 45 Lesson'),
                 Spacer(),
-                Text('₹ 1500'),
+                Text('₹ 1500',style: TextStyle(fontWeight: FontWeight.bold)),
               ],)
             ],
           ),

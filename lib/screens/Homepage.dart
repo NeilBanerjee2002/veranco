@@ -3,6 +3,7 @@ import 'package:veranco/utils/colors.dart';
 import 'package:veranco/utils/course_card.dart';
 import 'package:veranco/utils/course_detail_card.dart';
 import 'package:veranco/utils/my_learning.dart';
+import 'package:veranco/utils/icon_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -80,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                         title: 'Painting',
                       ),
                       CourseCard(
-                        title: 'Degital Marketing',
+                        title: 'Digital Marketing',
                       ),
                     ],
                   ),
@@ -117,14 +118,29 @@ class _HomePageState extends State<HomePage> {
                     Icon(Icons.navigate_next_outlined),
                   ],
                 ),
-                SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        MyLearningCard(),
-                        MyLearningCard(),
-                      ],
-                    ),
+                Container(
+                  height: 200,
+                  child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          MyLearningCard(),
+                          MyLearningCard(),
+                          MyLearningCard(),
+                          MyLearningCard(),
+                        ],
+                      ),
+                  ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CustomIcon(icon: Icon(Icons.home)),
+                    CustomIcon(icon: Icon(Icons.my_library_books)),
+                    CustomIcon(icon: Icon(Icons.favorite)),
+                    CustomIcon(icon: Icon(Icons.shopping_cart)),
+                    CustomIcon(icon: Icon(Icons.person)),
+                  ],
+                )
               ],
             ),
           ),
