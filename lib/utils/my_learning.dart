@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'colors.dart';
 
 class MyLearningCard extends StatefulWidget {
   const MyLearningCard({Key? key}) : super(key: key);
@@ -16,7 +15,7 @@ class _MyLearningCardState extends State<MyLearningCard> {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
         child: Container(
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12.0),
           ),
@@ -31,16 +30,29 @@ class _MyLearningCardState extends State<MyLearningCard> {
                   height: 80,
                 ),
               ),
-              SizedBox(width: 7,),
-              Column(children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text("Product Design Course", style: TextStyle(fontWeight: FontWeight.w500),),
-                ),
-                CircleAvatar(child: 
-                  Image(image: NetworkImage('https://media.licdn.com/dms/image/C4D03AQH4HQvfkNFE0Q/profile-displayphoto-shrink_400_400/0/1559071611059?e=1708560000&v=beta&t=4WhulGdJXh4d_-4kuyNL_6m5R3PSdxHkMQc2r_k3Ltw'),
-                  ),radius: 30,)
-              ],),
+              SizedBox(width: 7),
+              Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Product Design Course",
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  SizedBox(height: 7),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30.0), // Adjust the radius as needed
+                    child: CircleAvatar(
+                      child: Image(
+                        image: NetworkImage(
+                            'https://img-c.udemycdn.com/user/200_H/4466306_6fd8_3.jpg'),
+                      ),
+                      radius: 30,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

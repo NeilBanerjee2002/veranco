@@ -16,7 +16,7 @@ class _CourseDetailState extends State<CourseDetail> {
       child: Padding(
         padding: EdgeInsets.all(14),
         child: Container(
-          height: 260, width: 300,
+          height: 280, width: 300,
           decoration:  BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12.0),
@@ -50,11 +50,18 @@ class _CourseDetailState extends State<CourseDetail> {
                       Text("Educator", style: TextStyle(fontWeight: FontWeight.w300),),
                     ],
                   ),
-                  SizedBox(width: 80,),
+                  Spacer(),
                   Icon(Icons.star, color: ctaColor,),
                   Text('4.8', style: TextStyle(fontWeight: FontWeight.bold),)
                 ],
               ),
+              SizedBox(height: 7,),
+              Row(children: [
+                Text('5h 33m', style: TextStyle(color: primaryColor),),
+                Text(' | 45 Lesson'),
+                Spacer(),
+                Text('₹ 1500'),
+              ],)
             ],
           ),
         ),
