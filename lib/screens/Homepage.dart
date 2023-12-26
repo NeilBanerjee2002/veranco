@@ -25,123 +25,125 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: lightGrayColor,
-        body: Container(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Welcome', style: TextStyle(color: darkGrayColor)),
-                          Text('Name of the user'),
-                        ],
-                      ),
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            'https://img.freepik.com/free-icon/user_318-563642.jpg?w=360'),
-                      ),
-                    ],
+        body: SafeArea(
+          child: Container(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Welcome', style: TextStyle(color: darkGrayColor)),
+                            Text('Name of the user'),
+                          ],
+                        ),
+                        CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              'https://img.freepik.com/free-icon/user_318-563642.jpg?w=360'),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: TextField(
-                    controller: _searchController,
-                    decoration: InputDecoration(
-                      hintText: 'Search...',
-                      prefixIcon: Icon(Icons.search),
-                      border: inputborder,
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.filter_list),
-                        onPressed: () {
-                          print("Filter button pressed");
-                        },
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: TextField(
+                      controller: _searchController,
+                      decoration: InputDecoration(
+                        hintText: 'Search...',
+                        prefixIcon: Icon(Icons.search),
+                        border: inputborder,
+                        suffixIcon: IconButton(
+                          icon: Icon(Icons.filter_list),
+                          onPressed: () {
+                            print("Filter button pressed");
+                          },
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(14),
-                  child: Row(
+                  Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Row(
+                      children: [
+                        CourseCard(
+                          title: 'All courses',
+                        ),
+                        CourseCard(
+                          title: 'Design',
+                        ),
+                        CourseCard(
+                          title: 'Painting',
+                        ),
+                        CourseCard(
+                          title: 'Digital Marketing',
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
                     children: [
-                      CourseCard(
-                        title: 'All courses',
+                      SizedBox(width: 20,),
+                      Text(
+                        'Trending Courses',
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      CourseCard(
-                        title: 'Design',
-                      ),
-                      CourseCard(
-                        title: 'Painting',
-                      ),
-                      CourseCard(
-                        title: 'Digital Marketing',
-                      ),
+                      SizedBox(width: 250,),
+                      Icon(Icons.navigate_next_outlined),
                     ],
                   ),
-                ),
-                Row(
-                  children: [
-                    SizedBox(width: 20,),
-                    Text(
-                      'Trending Courses',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        CourseDetail(),
+                        CourseDetail(),
+                        CourseDetail(),
+                      ],
                     ),
-                    SizedBox(width: 250,),
-                    Icon(Icons.navigate_next_outlined),
-                  ],
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
+                  ),
+                  Row(
                     children: [
-                      CourseDetail(),
-                      CourseDetail(),
-                      CourseDetail(),
+                      SizedBox(width: 20,),
+                      Text(
+                        'My Learning',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(width: 250,),
+                      Icon(Icons.navigate_next_outlined),
                     ],
                   ),
-                ),
-                Row(
-                  children: [
-                    SizedBox(width: 20,),
-                    Text(
-                      'My Learning',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                  Container(
+                    height: 200,
+                    child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            MyLearningCard(),
+                            MyLearningCard(),
+                            MyLearningCard(),
+                            MyLearningCard(),
+                          ],
+                        ),
                     ),
-                    SizedBox(width: 250,),
-                    Icon(Icons.navigate_next_outlined),
-                  ],
-                ),
-                Container(
-                  height: 200,
-                  child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          MyLearningCard(),
-                          MyLearningCard(),
-                          MyLearningCard(),
-                          MyLearningCard(),
-                        ],
-                      ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CustomIcon(icon: Icon(Icons.home)),
-                    CustomIcon(icon: Icon(Icons.my_library_books)),
-                    CustomIcon(icon: Icon(Icons.favorite)),
-                    CustomIcon(icon: Icon(Icons.shopping_cart)),
-                    CustomIcon(icon: Icon(Icons.person)),
-                  ],
-                )
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomIcon(icon: Icon(Icons.home)),
+                      CustomIcon(icon: Icon(Icons.my_library_books)),
+                      CustomIcon(icon: Icon(Icons.favorite)),
+                      CustomIcon(icon: Icon(Icons.shopping_cart)),
+                      CustomIcon(icon: Icon(Icons.person)),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),

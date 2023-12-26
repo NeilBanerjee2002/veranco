@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
+import 'package:veranco/screens/course_preview_screen.dart';
 
 class CourseDetail extends StatefulWidget {
   const CourseDetail({Key? key}) : super(key: key);
@@ -12,7 +13,10 @@ class _CourseDetailState extends State<CourseDetail> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CoursePreviewScreen()),
+      );},
       child: Padding(
         padding: EdgeInsets.all(14),
         child: Container(
