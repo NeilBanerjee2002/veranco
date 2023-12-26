@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:veranco/utils/colors.dart';
 import 'package:veranco/utils/icon_list.dart';
+import 'package:veranco/snackbars&alerts/added_to_wishlist.dart';
 
 class CoursePreviewScreen extends StatelessWidget {
   const CoursePreviewScreen({Key? key}) : super(key: key);
@@ -28,6 +29,9 @@ class CoursePreviewScreen extends StatelessWidget {
                       Spacer(),
                       CustomIcon(
                         icon: Icon(Icons.favorite_border_outlined),
+                        onPressed: () {
+                          showBottomDialog(context, 'Course added to wishlist');
+                        },
                       ),
                       CustomIcon(icon: Icon(Icons.share)),
                       CustomIcon(icon: Icon(Icons.shopping_cart_outlined)),

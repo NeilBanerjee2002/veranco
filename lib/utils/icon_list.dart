@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatefulWidget {
-  const CustomIcon({Key? key, required this.icon}) : super(key: key);
+  const CustomIcon({Key? key, required this.icon, this.onPressed}) : super(key: key);
   final Icon icon;
+  final VoidCallback? onPressed;
 
   @override
   State<CustomIcon> createState() => _CustomIconState();
@@ -13,9 +14,7 @@ class _CustomIconState extends State<CustomIcon> {
   Widget build(BuildContext context) {
     return IconButton(
       icon: widget.icon,
-      onPressed: () {
-        // Handle button press
-      },
+      onPressed: widget.onPressed,
     );
   }
 }
