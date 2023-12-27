@@ -47,7 +47,10 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
                         },
                       ),
                       CustomIcon(icon: Icon(Icons.share)),
-                      CustomIcon(icon: Icon(Icons.shopping_cart_outlined)),
+                      CustomIcon(icon: Icon(Icons.shopping_cart_outlined),
+                      onPressed: (){
+                        showBottomDialog(context, 'Course added to Cart');
+                      },),
                     ],
                   ),
                   Stack(
@@ -122,6 +125,7 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
                     Icon(Icons.event_available_rounded),
                     Text('English, Hindi, French & Simplified Chinese'),
                   ],),
+
                 ],
               ),
             ),
