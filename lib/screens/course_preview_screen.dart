@@ -18,6 +18,7 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: darkWhiteColor,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -36,7 +37,9 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
                       Spacer(),
                       CustomIcon(
                         icon: Icon(
-                          isIconPressed ? Icons.favorite : Icons.favorite_border_outlined,
+                          isIconPressed
+                              ? Icons.favorite
+                              : Icons.favorite_border_outlined,
                           color: isIconPressed ? Colors.red : null,
                         ),
                         onPressed: () {
@@ -47,10 +50,12 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
                         },
                       ),
                       CustomIcon(icon: Icon(Icons.share)),
-                      CustomIcon(icon: Icon(Icons.shopping_cart_outlined),
-                      onPressed: (){
-                        showBottomDialog(context, 'Course added to Cart');
-                      },),
+                      CustomIcon(
+                        icon: Icon(Icons.shopping_cart_outlined),
+                        onPressed: () {
+                          showBottomDialog(context, 'Course added to Cart');
+                        },
+                      ),
                     ],
                   ),
                   Stack(
@@ -76,56 +81,221 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
                                   fontWeight: FontWeight.bold))),
                     ],
                   ),
-                  SizedBox(height: 8,),
-                  Row(children: [
-                    Text('Product Design',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                    Spacer(),
-                    Text('₹ 1500',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: primaryColor),),
-                  ],),
-                  SizedBox(height: 8,),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        'Product Design',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      Spacer(),
+                      Text(
+                        '₹ 1500',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: primaryColor),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
                   Text('Description'),
-                  SizedBox(height: 8,),
-                  Text('Lorem ipsum dolor sit amet. Rem nostrum doloribus aut nobis magni ea debitis quam aut repellat molestiae et repudiandae rerum. Ab modi laborum ea fugiat animi et soluta obcaecati.'),
-                  Text('Read More', style: TextStyle(color: primaryColor),),
-                  SizedBox(height: 15,),
-                  Row(children: [
-                    Text('4.8', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                    SizedBox(width: 5,),
-                    Icon(Icons.star, color: ctaColor,),
-                    SizedBox(width: 5,),
-                    Icon(Icons.star, color: ctaColor,),
-                    SizedBox(width: 5,),
-                    Icon(Icons.star, color: ctaColor,),
-                    SizedBox(width: 5,),
-                    Icon(Icons.star, color: ctaColor,),
-                    SizedBox(width: 5,),
-                    Icon(Icons.star_border),
-                  ],),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                      'Lorem ipsum dolor sit amet. Rem nostrum doloribus aut nobis magni ea debitis quam aut repellat molestiae et repudiandae rerum. Ab modi laborum ea fugiat animi et soluta obcaecati.'),
+                  Text(
+                    'Read More',
+                    style: TextStyle(color: primaryColor),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '4.8',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: ctaColor,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: ctaColor,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: ctaColor,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: ctaColor,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(Icons.star_border),
+                    ],
+                  ),
                   Text('(4k ratings) 32k students'),
-                  Row(children: [
-                    Text('5h 33m', style: TextStyle(color: primaryColor),),
-                    Text('| 45 Lessons'),
-                  ],),
-                  SizedBox(height: 5,),
+                  Row(
+                    children: [
+                      Text(
+                        '5h 33m',
+                        style: TextStyle(color: primaryColor),
+                      ),
+                      Text('| 45 Lessons'),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Row(
                     children: [
                       Text('Created by '),
-                      Text('Colt Steele',style: TextStyle(color: primaryColor),),
+                      Text(
+                        'Colt Steele',
+                        style: TextStyle(color: primaryColor),
+                      ),
                     ],
                   ),
-                  Row(children: [
-                    Icon(Icons.settings_voice_sharp),
-                    Text('English'),
-                  ],),
-                  Row(children: [
-                    Icon(Icons.subtitles_rounded),
-                    Text('Last updated 10/2023'),
-                  ],),
-                  Row(children: [
-                    Icon(Icons.event_available_rounded),
-                    Text('English, Hindi, French & Simplified Chinese'),
-                  ],),
-
+                  Row(
+                    children: [
+                      Icon(Icons.settings_voice_sharp),
+                      Text('English'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.subtitles_rounded),
+                      Text('Last updated 10/2023'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.event_available_rounded),
+                      Text('English, Hindi, French & Simplified Chinese'),
+                    ],
+                  ),
+                  SizedBox(height: 20,),
+                  SingleChildScrollView(
+                    child: Container(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                color: Colors.white70,
+                                width: 190,
+                                height: 50,
+                                child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text('Course Content')
+                                ),
+                              ),
+                              Container(
+                                width: 190,
+                                height: 50,
+                                color: blueishWhiteColor,
+                                child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text('Reviews',
+                                    style: TextStyle(color: darkGrayColor),)
+                                ),
+                              )
+                            ],
+                          ),
+                          Container(
+                            color: Colors.white70,
+                            width: 380,
+                            height: 50,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text('Section 2: Introduction'),
+                                      Text('3/5 unit · 14 min',
+                                      style: TextStyle(color: Colors.grey),),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  Icon(Icons.arrow_drop_down_rounded),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            color: Colors.white70,
+                            width: 380,
+                            height: 50,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text('Section 2: Introduction'),
+                                      Text('3/5 unit · 14 min',
+                                        style: TextStyle(color: Colors.grey),),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  Icon(Icons.arrow_drop_down_rounded),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            color: Colors.white70,
+                            width: 380,
+                            height: 50,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text('Section 2: Introduction'),
+                                      Text('3/5 unit · 14 min',
+                                        style: TextStyle(color: Colors.grey),),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  Icon(Icons.arrow_drop_down_rounded),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
