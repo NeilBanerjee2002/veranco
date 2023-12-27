@@ -3,8 +3,15 @@ import 'package:veranco/utils/colors.dart';
 import 'package:veranco/utils/icon_list.dart';
 import 'package:veranco/snackbars&alerts/added_to_wishlist.dart';
 
-class CoursePreviewScreen extends StatelessWidget {
+class CoursePreviewScreen extends StatefulWidget {
   const CoursePreviewScreen({Key? key}) : super(key: key);
+
+  @override
+  _CoursePreviewScreenState createState() => _CoursePreviewScreenState();
+}
+
+class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
+  bool isIconPressed = false; // State to track if the icon is pressed
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +35,14 @@ class CoursePreviewScreen extends StatelessWidget {
                       ),
                       Spacer(),
                       CustomIcon(
-                        icon: Icon(Icons.favorite_border_outlined),
+                        icon: Icon(
+                          isIconPressed ? Icons.favorite : Icons.favorite_border_outlined,
+                          color: isIconPressed ? Colors.red : null,
+                        ),
                         onPressed: () {
+                          setState(() {
+                            isIconPressed = !isIconPressed;
+                          });
                           showBottomDialog(context, 'Course added to wishlist');
                         },
                       ),
@@ -52,9 +65,12 @@ class CoursePreviewScreen extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                          top: 240, right: 140,
-                      child: Text('Preview this course',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),))
+                          top: 240,
+                          right: 140,
+                          child: Text('Preview this course',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold))),
                     ],
                   ),
                   SizedBox(height: 8,),

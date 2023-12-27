@@ -10,29 +10,40 @@ void showBottomDialog(BuildContext context, String content) {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Material(
-            elevation: 5, // Adjust elevation as needed
+            elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16), // Adjust border radius
+              borderRadius: BorderRadius.circular(24),
             ),
             child: Container(
               width: double.infinity,
-              color: Colors.white, // Adjust background color as needed
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                color: primaryColor,
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      content,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(height: 8),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text('Close'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Column(children: [
+
+                        ],),
+                        Text(
+                          content,
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                        Spacer(),
+                        IconButton(
+                          icon: Icon(Icons.close),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ],
                     ),
                   ],
                 ),
