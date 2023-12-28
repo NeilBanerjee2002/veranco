@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:veranco/utils/colors.dart';
 import 'package:veranco/utils/icon_list.dart';
 import 'package:veranco/snackbars&alerts/added_to_wishlist.dart';
+import 'package:veranco/screens/payment_screen.dart';
 
 class CoursePreviewScreen extends StatefulWidget {
   const CoursePreviewScreen({Key? key}) : super(key: key);
@@ -201,8 +202,8 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
                       ],
                     ),
                     SizedBox(height: 20,),
-                    SingleChildScrollView(
-                      child: Container(
+                    Container(
+                      child: SingleChildScrollView(
                         child: Column(
                           children: [
                             Row(
@@ -305,6 +306,11 @@ class _CoursePreviewScreenState extends State<CoursePreviewScreen> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: InkWell(
+                  onTap: (){Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PaymentScreen()),
+                  );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
