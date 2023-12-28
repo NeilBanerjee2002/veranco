@@ -12,7 +12,7 @@ const Color secondaryColor = Color(0xFF4CAF50);
 
 // Neutral Colors
 const Color whiteColor = Colors.white;
-const Color lightGrayColor = Color(0xFFEAEAEA);
+const Color lightGrayColor = Color(0xFFEAEEE2);
 
 // Call to Action (CTA) Color
 const Color ctaColor = Color(0xFFFFA500);
