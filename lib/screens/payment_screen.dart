@@ -196,6 +196,33 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         ],)
                   ),
                 ),
+                Container(
+                  width: double.infinity,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                        Text('₹ 1500.00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
+                        SizedBox(height: 8,),
+                        Text('View detailed view', style: TextStyle(color: primaryColor),)
+                      ],),
+                        Spacer(),
+                        InkWell(
+                          onTap: (){},
+                          child: Container(
+                            height: 50,
+                            color: ctaColor,
+                            width: 200,
+                            child: Center(child: Text('Proceed to Pay', style: TextStyle(color: Colors.white),)),
+                          ),
+                        )
+                    ],),
+                  ),
+                ),
               ],
             ),
           ),
