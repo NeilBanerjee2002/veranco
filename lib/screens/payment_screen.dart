@@ -184,9 +184,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             Icon(Icons.circle_outlined,color: primaryColor,),
                           ],),
                           SizedBox(height: 10,),
-                          Row(children: [
+                          Row(
+                            children: [
                             Image(image: NetworkImage('https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/phonepe-logo-icon.png',
-                            ),height: 20, width: 40,),
+                            ),height: 24, width: 40,),
                             SizedBox(width: 8,),
                             Text('PhonePe', style: TextStyle(color: Colors.grey),),
                             Spacer(),
